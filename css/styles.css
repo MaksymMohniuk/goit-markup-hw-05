@@ -131,6 +131,7 @@ button {
 .menu-link:hover,
 .menu-link:focus {
   color: var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-link-mail,
@@ -152,6 +153,7 @@ button {
 .menu-link-footer:hover,
 .menu-link-footer:focus {
   color: var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-link-mail:hover,
@@ -159,6 +161,7 @@ button {
   color: var(--accent-color);
   fill: var(--accent-color);
   cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-link-tel:hover,
@@ -166,6 +169,7 @@ button {
   color: var(--accent-color);
   fill: var(--accent-color);
   cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);;
 }
 
 .header-contacts-item {
@@ -228,6 +232,7 @@ button {
 .modal-btn:hover,
 .modal-btn:focus {
   background-color: var(--btn-hover-focus-accent);
+  transition: var(--background-color) 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .about {
@@ -417,11 +422,13 @@ box-shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 .social-link-item:focus .social-link-icon {
   fill: var(--text-color-primary);
   cursor: pointer;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link-item:hover,
 .social-link-item:focus {
   background-color: var(--accent-color);
+  transition: var(--background-color) 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients {
@@ -450,8 +457,9 @@ box-shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
 .clients-list-link:hover,
 .clients-list-link:focus {
-  color: var(--accent-color);
+ color: var(--accent-color);
  border-color:var(--accent-color);
+ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-section {
@@ -494,6 +502,7 @@ box-shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 .menu-link-footer:hover,
 .menu-link-footer:focus {
   color: var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-list-item {
@@ -534,6 +543,7 @@ margin-bottom: 20px;
 .footer-social-link:hover,
 .footer-social-link:focus {
   background-color: var(--btn-background-color);
+  transition: var(--btn-background-color) 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-container {
@@ -545,6 +555,17 @@ margin-bottom: 20px;
 .portfolio {
   padding: 94px 0;
 }
+
+.menu-link.p-current::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  display: flex;
+  width: 78px;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+  }
 
 .btn-list {
   display: flex;
@@ -572,6 +593,7 @@ margin-bottom: 20px;
 .portfolio-list-item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
   cursor: pointer;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-btn {
@@ -590,7 +612,8 @@ margin-bottom: 20px;
 .portfolio-btn:focus {
   color: var(--text-color-primary);
   background-color: var(--accent-color);
-  box-shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));;
+  box-shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-list-title {
@@ -612,4 +635,27 @@ margin-bottom: 20px;
   padding: 20px 24px;
   border: 1px solid #eeeeee;
   border-top: none;
+}
+
+.img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-top-text {
+position: absolute;
+bottom: 0;
+font-weight: 400;
+font-size: 18px;
+line-height: 1.56;
+color: var(--text-color-primary);
+background-color:  rgba(33, 150, 243, 0.9);
+height: 100%;
+padding: 63px 24px;
+transform: translateY(100%);
+transition: transform 300ms linear;
+}
+
+.portfolio-link:hover .img-top-text {
+  transform: translateY(0);
 }
