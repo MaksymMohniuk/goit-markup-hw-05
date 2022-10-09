@@ -64,7 +64,7 @@ content: '';
 position: absolute;
 bottom: -1px;
 display: flex;
-width: 48px;
+width: 100%;
 height: 4px;
 background-color: var(--accent-color);
 border-radius: 2px;
@@ -556,17 +556,6 @@ margin-bottom: 20px;
   padding: 94px 0;
 }
 
-.menu-link.p-current::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  display: flex;
-  width: 78px;
-  height: 4px;
-  background-color: var(--accent-color);
-  border-radius: 2px;
-  }
-
 .btn-list {
   display: flex;
   gap: 8px;
@@ -658,4 +647,55 @@ transition: transform 300ms linear;
 
 .portfolio-link:hover .img-top-text {
   transform: translateY(0);
+}
+
+/* Модальне вікно  */
+
+.backdrop {
+position: relative;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.2);
+transition: opacity 300ms linear, visibility 300ms linear;
+}
+
+.window {
+width: 528px;
+height: 581px;
+background: var(--text-color-primary);
+box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+border-radius: 4px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%) scale(1);
+transition: transform 300ms linear;
+}
+
+.backdrop.is-hidden .window {
+  transform: translate (-50%, -50%) scale(0);
+}
+
+.window-btn {
+width: 30px;
+height: 30px;
+background: var(--text-color-primary);
+border: 1px solid rgba(0, 0, 0, 0.1);
+border-radius: 50%;
+background-color: transparent;
+position: absolute;
+top: 8px;
+right: 8px;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 0;
+cursor: pointer;
+}
+
+.is-hidden {
+opacity: 0;
+visibility: hidden;
+pointer-events: none;
 }
